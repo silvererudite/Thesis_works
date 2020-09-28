@@ -24,7 +24,7 @@ b. improve the user’s mental condition through continuous conversation like a 
 
 *Need for a robust method for providing information about humans emotional state
 
-## The datasets
+## Data Analysis
 
 We have collected 3 sensor datasets namely of EDA, PPG and EMG signals which are relevant to our scope of work. These were previously used in various studies involving human emotions and are widely accepted. EDA signals dataset is extracted from the multimodal WESAD dataset [1], PPG dataset....EMG dataset....
 
@@ -32,15 +32,34 @@ We have planned to process our dataset in two phases. For the first phase, we wa
 
 The most important signal for our purpose is EDA- electrodermal activity which is extracted from the WESAD dataset where the researchers conducted several experiments on 12 individuals. In these experiments they simulated a stressful state following the *TSST* method and collected a handful of physiological data in the form of various signals. They used a chest-worn and wrist-worn device to do so and collected multiple readings from each individuals. We are considering readings from both these devices for our purpose.
 
+### EDA signals
+
+To summarize theories in [7], EDA measures the *emotional arousal* we experience when we are stressed, fearful, happy and various other emotional states. It is possible to do so because whenever we experience emotional stimulation, sweat glands on our skin secrete sweat causing changes in the skin's electrical conductivity. These electrical changes are indicative of our levels of arousal measured as either skin potenstial, resistance, conductance etc. EDA is measured in microSiemens(μS) .This signal enables us to access to the otherwise autonomously controlled nervous system of the body to detect emotional arousal that can be translated to emotional states offering us an unadulterated view to our own psychological processes in a completely non invasive way.
+
+As studied from [8], EDA or GSR signals consist of two main components that are indicative of our emotional behaviour. 
+
+1. SCL - skin conductance level
+2. SCR - skin conductance response
+
+They are dubbed as the *level of the signal* and the *response of the signal* for ease on understanding. The skin conductance level is also referred as the *tonic* component of the signal. It slowly changes over time. The time scale is usually of tens of seconds to tens of minutes. It is not particularly informative on its own. It is shown that tonic level varies widely from person to person as it depends on their hydration, skin dryness etc. Therefore vast majority of professionals and researchers have deemed it to be a poor measure of skin's conductance. The other component, skin conductance response is of particular importance to us. It is also known as the *phasic* component. They are shown as GSR bursts or peaks if a graph of their measure is plotted against time. This phasic component is sensitive to specific stimulus that are emotionally arousing. They occur when EDA amplitudes cross a certain threshold value in a time period within 1-5 seconds after a stimulus is initiated. On a graph of raw EDA signals this phasic component is etched on top of the seemingly unchanged tonic component as shown in figure 1.
+
+![Figure 1: Graph of GSR amplitude VS time](C:\Users\ASUS\Desktop\EDA graph.png)
+
 ### EDA and it's relevance to psychoanalysis 
 
-EDA also known as GSR signals, is a property of the human body which shows continuous variation in the electrical characteristics of the skin. These changes in the skin can be triggered by external factors or internal factors in the human body which is why this signal is of great interest to us.  EDA shows changes in the electrical properties of skin. Various studies [3] show that the nervous system is connected to the sweat glands on our skin. These glands secrete sweat in response to external or internal stimuli which causes changes in the skin's electrical conductivity [5]. Therefore we can use skin conductance to reflect and measure cognitive and sympathetic responses. As a result emotional states like stress, happiness and sadness can be detected using EDA. Lastly owing to the fact that measuring EDA is relatively affordable, easy to operate and non-invasive it has been widely used in the field of psychoanalysis and various psychological research.
+EDA also known as GSR signals, is a property of the human body which shows continuous variation in the electrical characteristics of the skin. These changes in the skin can be triggered by external factors or internal factors in the human body which is why this signal is of great interest to us.  Various studies [3] show that the nervous system is connected to the sweat glands on our skin. These glands secrete sweat in response to external or internal stimuli which causes changes in the skin's electrical conductivity [5]. Therefore we can use skin conductance to reflect and measure cognitive and sympathetic responses. As a result emotional states like stress, happiness and sadness can be detected using EDA. Lastly owing to the fact that measuring EDA is relatively affordable, easy to operate and non-invasive it has been widely used in the field of psychoanalysis and various psychological research.
 
 ### Related studies where EDA measures various psychological states
 
-According to [5], EDA is one of the earliest signals to be used for quantifying emotional excitement. In [2], the researchers bring forth an extensive system which analyses human emotional arousal with the help of EDA. EDA was also used to measure stress, where they proposed an open source tool which was able to predict stress with an accuracy of 92% in [4]. EDA is also used in the field of virtual reality where the researchers used kernel based extreme-learning machine [6] to classify different levels of stress in an environment which simulated stressful conditions, achieving 95% accuracy. These are just a few examples of the vast area of research that is ongoing in the field of psychoanalysis and undoubtedly EDA plays a huge role in it.
+According to [5], EDA is one of the earliest signals to be used for quantifying emotional excitement. In [2], the researchers bring forth an extensive system which analyses human emotional arousal with the help of EDA. EDA was also used to measure stress, where an open source tool was proposed which was able to predict stress with an accuracy of 92% in [4]. It is also used in the field of virtual reality where the researchers used kernel based extreme-learning machine [6] to classify different levels of stress in an environment which simulated stressful conditions, achieving 95% accuracy. These are just a few examples of the vast area of research that is ongoing in the field of psychoanalysis and undoubtedly EDA plays a huge role in it.
 
-### Concise  primer on EDA signals
+
+
+
+
+
+
+
 
 
 
