@@ -24,7 +24,7 @@ b. improve the user’s mental condition through continuous conversation like a 
 
 *Need for a robust method for providing information about humans emotional state
 
-## Data Analysis
+## Signal Data Analysis 
 
 We have collected 3 sensor datasets namely of EDA, PPG and EMG signals which are relevant to our scope of work. These were previously used in various studies involving human emotions and are widely accepted. EDA signals dataset is extracted from the multimodal WESAD dataset [1], PPG dataset....EMG dataset....
 
@@ -43,7 +43,7 @@ As studied from [8], EDA or GSR signals consist of two main components that are 
 
 They are dubbed as the *level of the signal* and the *response of the signal* for ease on understanding. The skin conductance level is also referred as the *tonic* component of the signal. It slowly changes over time. The time scale is usually of tens of seconds to tens of minutes. It is not particularly informative on its own. It is shown that tonic level varies widely from person to person as it depends on their hydration, skin dryness etc. Therefore vast majority of professionals and researchers have deemed it to be a poor measure of skin's conductance. The other component, skin conductance response is of particular importance to us. It is also known as the *phasic* component. They are shown as GSR bursts or peaks if a graph of their measure is plotted against time. This phasic component is sensitive to specific stimulus that are emotionally arousing. They occur when EDA amplitudes cross a certain threshold value in a time period within 1-5 seconds after a stimulus is initiated. On a graph of raw EDA signals this phasic component is etched on top of the seemingly unchanged tonic component as shown in figure 1.
 
-![Figure 1: Graph of GSR amplitude VS time](C:\Users\ASUS\Desktop\EDA graph.png)
+![Graph of GSR amplitudes vs Time](https://user-images.githubusercontent.com/24827548/94520735-97a7e700-024e-11eb-8270-3d68fef0a4f2.png)
 
 ### EDA and it's relevance to psychoanalysis 
 
@@ -52,6 +52,28 @@ EDA also known as GSR signals, is a property of the human body which shows conti
 ### Related studies where EDA measures various psychological states
 
 According to [5], EDA is one of the earliest signals to be used for quantifying emotional excitement. In [2], the researchers bring forth an extensive system which analyses human emotional arousal with the help of EDA. EDA was also used to measure stress, where an open source tool was proposed which was able to predict stress with an accuracy of 92% in [4]. It is also used in the field of virtual reality where the researchers used kernel based extreme-learning machine [6] to classify different levels of stress in an environment which simulated stressful conditions, achieving 95% accuracy. These are just a few examples of the vast area of research that is ongoing in the field of psychoanalysis and undoubtedly EDA plays a huge role in it.
+
+### EDA signal processing
+
+For analysing these EDA signals, we will mainly focus on the *Event-related SCRs*  as it is indicative of sudden changes in emotions. For instance when visualized, these SCRs would show peaks in a graph if the user is emotionally aroused in response to some stimulus. We can characterize SCRs with four different metrics: latency, peak amplitude, rise time and recovery time, their explanations are omitted for sake of brevity. However our focus is on the problems that arise on when analysing these signals. It is seen that EDA signals are not exactly flat before and after a peak and the peaks often appear consecutively hindering analysis. Therefore the signal needs to undergo some preprocessing for classification.
+
+1. Downsampling - we did not apply downsampling here as the data points are already sampled at 4Hz. This sampling rate was appropriate for analysis.
+2. Filtering - We had to apply *median filter* to separate the tonic signals from the data as they are non-indicative of emotional arousal. The median filter smoothes the signals leaving the desired phasic signals.
+3. Peak detection - we applied built-in algorithms in the neurokit2 python package for automating this task.
+
+### Feature extraction
+
+For preliminary purposes, we are interested in the statistical features of EDA namely Number of GSR peaks, mean peak amplitutde and mean peak magnitude.
+
+
+
+
+
+
+
+
+
+
 
 
 
